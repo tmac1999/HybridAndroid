@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>	 
+</head>
+<body>
+	<div id="time">
+		
+		
+	</div>
+	<a href="javascript:callJava()")>打电话---调用方式1</a>
+	<a href=javascript:Android.callPhone("1008611")>打电话---调用方式2</a>
+	<input type="button" value="调用打电话的方法" onclick="begin();">
+	<input type="button" value="调用QQ的方法" onclick="callQQ();">
+	<input type="button" value="调用微信的方法" onclick="callWeixin();">
+	<input type="button" value="弹出对话框" onclick="callJS();">
+	<input type="button" value="查找userID返回Json字符串" onclick="findSubUsers();">
+	<input type="text" value="请输入userid" id="text">
+
+	<img src="C:/ChinaMobileDevelopRelative/1.jpg" alt="手机图片"/>
+</body>
+</html>
+	 <script type="text/javascript">
+	 
+	 	var id;//计时器的返回id
+	 	//如何向div标签中添加文本
+	 	function setTime(){
+	 		
+	 		document.getElementById("time").innerHTML = new Date().toLocaleString();
+	 	}
+	 	setTime();
+	 	
+	 	
+	 	//暂停方法
+	 	function callJava(){
+			Android.callPhone("10086");
+	 		
+	 	}
+	 	//开始方法
+	 	function begin(){
+            Android.callPhone("13121571772")
+	 		
+	 	}
+		function callQQ(){
+			Android.callQQ("10086");
+	 		
+	 	}
+		function callWeixin(){
+			Android.callWeixin("10086");
+	 		
+	 	}
+
+		function callJS(){
+			alert("js代码被调用了！");
+		}
+	 	function findSubUsers(){
+			var userid = document.getElementById("text").value;
+			var res = Android.findAllSubUsers(userid); 
+			document.write("<p>"+res+"</p>");
+			alert(userid);
+		}
+	 </script>

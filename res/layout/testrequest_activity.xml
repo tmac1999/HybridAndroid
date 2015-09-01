@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="模拟一个Post 请求" />
+
+    <Button
+        android:id="@+id/btn_copyDB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="拷贝 数据库" />
+
+    <Button
+        android:id="@+id/btn_queryDB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查询 数据库" />
+
+    <EditText
+        android:id="@+id/et_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9999739" />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请求结果。。" />
+
+    <ProgressBar
+        android:id="@+id/pb_emulator"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="273dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="160dp"
+        android:progress="80"
+        android:visibility="invisible" />
+
+</LinearLayout>
