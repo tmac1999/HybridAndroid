@@ -1,7 +1,8 @@
 package com.example.chinamobile;
 
-import java.util.List; 
+import java.util.List;
 
+import android.R.integer;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
@@ -24,6 +25,7 @@ import com.example.chinamobile.base.ShowPackageActivity;
 import com.example.chinamobile.base.TestRequestActivity;
 import com.example.chinamobile.base.impl.DefaultActivity;
 import com.example.chinamobile.base.impl.DemoCallActivity;
+import com.example.chinamobile.view.DraggableGridView;
 import com.jauker.widget.BadgeView;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.util.LogUtils;
@@ -39,7 +41,7 @@ public class MainActivity extends Activity {
 			R.drawable.home_trojan, R.drawable.home_sysoptimize,
 			R.drawable.home_tools, R.drawable.home_settings };
 	@ViewInject(R.id.gv_pushnotify)
-	private GridView gv_pushnotify;
+	private DraggableGridView gv_pushnotify;
 	private GridViewAdapter gridAdapter;
 
 	@Override
@@ -48,7 +50,9 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		ViewUtils.inject(this);
 		gridAdapter = new GridViewAdapter();
-		gv_pushnotify.setAdapter(gridAdapter);
+		// gv_pushnotify.setAdapter(gridAdapter);
+		fillGridView();
+
 		LogUtils.i("android.os.Build.VERSION.CODENAME"
 				+ android.os.Build.VERSION.RELEASE);// 系统版本
 		LogUtils.i("android.os.Build.VERSION.CODENAME"
@@ -61,7 +65,29 @@ public class MainActivity extends Activity {
 
 		LogUtils.i("list" + list.toString());
 		initFunction();
-		
+
+	}
+
+	private void fillGridView() {
+		for (int position = 0; position < 9; position++) {
+			LinearLayout gv_item = (LinearLayout) View.inflate(
+					MainActivity.this, R.layout.gv_item, null);
+			ImageView iv_function = (ImageView) gv_item
+					.findViewById(R.id.iv_function);
+			TextView tv_function = (TextView) gv_item
+					.findViewById(R.id.tv_function);
+			tv_function.setText(mItems[position]);
+			iv_function.setImageResource(mPics[position]);
+			// 设置消息提示 数目
+
+			BadgeView backgroundDrawableBadge = new BadgeView(MainActivity.this);
+			backgroundDrawableBadge.setBadgeCount(position);
+			// backgroundDrawableBadge.setBackgroundResource(R.drawable.badge_blue);
+			backgroundDrawableBadge.setTargetView(iv_function);
+
+			gv_pushnotify.addView(gv_item);
+		}
+
 	}
 
 	/**

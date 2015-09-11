@@ -8,12 +8,12 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <GridView 
+    <com.example.chinamobile.view.DraggableGridView 
         android:id="@+id/gv_pushnotify"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:numColumns="3"
         android:columnWidth="160dp"
-        ></GridView>
+        ></com.example.chinamobile.view.DraggableGridView>
 
 </RelativeLayout>
