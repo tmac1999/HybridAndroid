@@ -1,8 +1,11 @@
 package com.example.chinamobile.test;
 
 import java.io.File;
+import java.text.Format;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 
@@ -12,6 +15,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
+import com.example.chinamobile.base.NewsActivity;
 import com.example.chinamobile.bean.Dept;
 import com.example.chinamobile.bean.StandardDept;
 import com.example.chinamobile.bean.StandardUser;
@@ -23,6 +27,7 @@ import com.lidroid.xutils.util.LogUtils;
 import android.R.integer;
 import android.os.Messenger;
 import android.test.InstrumentationTestCase;
+import android.text.format.Formatter;
 
 public class TestForAnalysis extends InstrumentationTestCase{
 	@Override
@@ -31,6 +36,14 @@ public class TestForAnalysis extends InstrumentationTestCase{
 		// TODO Auto-generated method stub
 		super.setUp();
 	}
+	public void testTimeAPI(){
+		long currentTimeMillis = System.currentTimeMillis();
+		
+		SimpleDateFormat format = new SimpleDateFormat("yyy-MM-dd HH:mm:ss");
+		String timeString = format.format(new Date());
+		System.out.println("currentTimeMillis"+currentTimeMillis+"=="+currentTimeMillis/(1000*60*60*24)+"time=="+timeString);
+	}
+	
 	@SuppressWarnings("unchecked")
 	public void testArrayList(){
 		

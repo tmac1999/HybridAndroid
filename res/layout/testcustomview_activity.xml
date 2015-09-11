@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:gravity="center"
+    >
+    <Button 
+         android:id="@+id/btn"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="botton"
+        />
+    <com.example.chinamobile.view.TenDynamicDot
+        android:id="@+id/tdd"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        >
+    </com.example.chinamobile.view.TenDynamicDot>
+
+</LinearLayout>
