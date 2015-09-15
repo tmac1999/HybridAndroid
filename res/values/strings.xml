@@ -4,5 +4,6 @@
     <string name="app_name">ChinaMobile</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_return">测试登录qq 后返回页面</string>
 
 </resources>

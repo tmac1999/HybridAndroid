@@ -16,7 +16,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <permission
         android:name="com.example.chinamobile.permission.JPUSH_MESSAGE"
@@ -53,7 +53,8 @@
 
         <activity
             android:name="com.example.chinamobile.base.TestCustomViewActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -82,6 +83,30 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="com.example.chinamobile" />
+            </intent-filter>
+        </activity>
+        <!-- 腾讯第三方登录 -->
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".ReturnActivity"
+            android:label="@string/title_activity_return" >
+        </activity>
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1104787677" />
+                <!-- 100380359 100381104 222222 -->
             </intent-filter>
         </activity>
         <!-- Required  SDK核心功能 -->

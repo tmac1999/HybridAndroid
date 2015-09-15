@@ -64,6 +64,8 @@ public class TenDynamicDot extends View{
 		return paints;
 				
 	}
+	private int count = 0;
+	int[] colors = {Color.GREEN,Color.BLUE,Color.LTGRAY};
 	public void startScaleAnimation(){
 		new Thread(){
 			public void run() {
@@ -75,7 +77,8 @@ public class TenDynamicDot extends View{
 						e.printStackTrace();
 					}
 					//睡3秒，改变颜色
-					paints.get(i).setColor(Color.GREEN);
+					paints.get(count).setColor(colors[count%3]);
+					
 					postInvalidate();
 //					runOnUiThread(new Runnable() {
 //						
@@ -89,7 +92,7 @@ public class TenDynamicDot extends View{
 				}
 			};
 		}.start();
-		
+		count++;
 	
 	}
 	private onColorChangedListener onColorChangedListener;
