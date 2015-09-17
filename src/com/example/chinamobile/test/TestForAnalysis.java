@@ -25,9 +25,13 @@ import com.example.chinamobile.utils.JsonParseUtils;
 import com.lidroid.xutils.util.LogUtils;
 
 import android.R.integer;
+import android.animation.ValueAnimator;
+import android.animation.ValueAnimator.AnimatorUpdateListener;
+import android.annotation.SuppressLint;
 import android.os.Messenger;
 import android.test.InstrumentationTestCase;
 import android.text.format.Formatter;
+
 
 public class TestForAnalysis extends InstrumentationTestCase{
 	@Override
@@ -36,12 +40,46 @@ public class TestForAnalysis extends InstrumentationTestCase{
 		// TODO Auto-generated method stub
 		super.setUp();
 	}
+	
+	public void testLogicalCaculate(){
+		int i = 0xffff0000;
+		int j = 0x55000000;
+		int result = j-i;
+		String hexString = Integer.toHexString(result);
+		//int result = i&&j;
+		System.out.println("===="+hexString);
+		
+		
+		
+		ValueAnimator animator = ValueAnimator.ofInt(00,0xff);
+		animator.setDuration(2000);
+		animator.addUpdateListener(new AnimatorUpdateListener() {
+			
+			@Override
+			public void onAnimationUpdate(ValueAnimator animation) {
+				int i = 0xffff0000;
+				int animatedValue = (Integer) animation.getAnimatedValue();
+				System.out.println("<<24==="+animatedValue);
+				int color = (animatedValue<<24)&i;
+				System.out.println("color=="+color);
+				
+			}
+		});
+		animator.start();
+	}
+	public void testMathAPI(){
+		
+		double cos = Math.cos(Math.toRadians(60));
+		System.out.println("cos60="+cos);
+	}
 	public void testTimeAPI(){
 		long currentTimeMillis = System.currentTimeMillis();
+		currentTimeMillis = 1000000000;
 		
 		SimpleDateFormat format = new SimpleDateFormat("yyy-MM-dd HH:mm:ss");
+		String format2 = format.format(new Date(currentTimeMillis));
 		String timeString = format.format(new Date());
-		System.out.println("currentTimeMillis"+currentTimeMillis+"=="+currentTimeMillis/(1000*60*60*24)+"time=="+timeString);
+		System.out.println("currentTimeMillis"+currentTimeMillis+"=="+currentTimeMillis/(1000*60*60*24)+"time=="+format2);
 	}
 	
 	@SuppressWarnings("unchecked")

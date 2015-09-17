@@ -26,13 +26,13 @@
     <Button
         android:id="@+id/btn"
         android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         android:text="botton" />
 
     <com.example.chinamobile.view.TenDynamicDot
         android:id="@+id/tdd"
-        android:layout_width="150dp"
-        android:layout_height="150dp" >
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
     </com.example.chinamobile.view.TenDynamicDot>
 
 </LinearLayout>

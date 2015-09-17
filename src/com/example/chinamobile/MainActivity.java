@@ -2,6 +2,9 @@ package com.example.chinamobile;
 
 import java.util.List;
 
+import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.DefaultHttpClient;
+
 import android.R.integer;
 import android.app.Activity;
 import android.content.Intent;
@@ -41,7 +44,7 @@ public class MainActivity extends Activity {
 			R.drawable.home_trojan, R.drawable.home_sysoptimize,
 			R.drawable.home_tools, R.drawable.home_settings };
 	@ViewInject(R.id.gv_pushnotify)
-	private DraggableGridView gv_pushnotify;
+	private GridView gv_pushnotify;
 	private GridViewAdapter gridAdapter;
 
 	@Override
@@ -50,8 +53,9 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		ViewUtils.inject(this);
 		gridAdapter = new GridViewAdapter();
-		// gv_pushnotify.setAdapter(gridAdapter);
-		fillGridView();
+		//System.out.println("gridview=="+gv_pushnotify);
+		gv_pushnotify.setAdapter(gridAdapter);
+		//fillGridView();
 
 		LogUtils.i("android.os.Build.VERSION.CODENAME"
 				+ android.os.Build.VERSION.RELEASE);// 系统版本

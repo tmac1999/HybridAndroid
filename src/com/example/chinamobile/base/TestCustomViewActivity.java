@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 import org.json.JSONObject;
 
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.animation.ValueAnimator.AnimatorUpdateListener;
 import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -50,10 +53,10 @@ public class TestCustomViewActivity extends Activity implements OnClickListener 
 		btn.setOnClickListener(this);
 		mBtn_loginQQ.setOnClickListener(this);
 		setClick();
-
+		
 		mTencent = Tencent.createInstance(mAppid, this);
 	}
-
+	
 	private void setClick() {
 		btn.setOnClickListener(new OnClickListener() {
 
@@ -62,7 +65,9 @@ public class TestCustomViewActivity extends Activity implements OnClickListener 
 				// TODO Auto-generated method stub
 				System.out.println(tdd + "btn" + btn);
 				// final ArrayList<Paint> paints = tdd.getPaints();
-				tdd.startScaleAnimation();
+				String text1 = "Battery in charge....90%";
+				String text2 = "Low Battery,Please charge battery...";
+				tdd.startScaleAnimationWithText(TestCustomViewActivity.this,text1,text2);
 
 			}
 		});
