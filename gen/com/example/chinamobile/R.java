@@ -10,6 +10,17 @@ package com.example.chinamobile;
 public final class R {
     public static final class attr {
     }
+    public static final class color {
+        public static final int black=0x7f040007;
+        public static final int geolocation_permissions_prompt_background=0x7f040008;
+        public static final int password_edit=0x7f040003;
+        public static final int password_text=0x7f040002;
+        public static final int ssl_text_label=0x7f040004;
+        public static final int ssl_text_value=0x7f040005;
+        public static final int username_edit=0x7f040001;
+        public static final int username_text=0x7f040000;
+        public static final int white=0x7f040006;
+    }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
 
@@ -17,62 +28,78 @@ public final class R {
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f040000;
-        public static final int activity_vertical_margin=0x7f040001;
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
-        public static final int errorpage=0x7f020000;
-        public static final int home_apps=0x7f020001;
-        public static final int home_callmsgsafe=0x7f020002;
-        public static final int home_netmanager=0x7f020003;
-        public static final int home_safe=0x7f020004;
-        public static final int home_settings=0x7f020005;
-        public static final int home_sysoptimize=0x7f020006;
-        public static final int home_taskmanager=0x7f020007;
-        public static final int home_tools=0x7f020008;
-        public static final int home_trojan=0x7f020009;
-        public static final int ic_launcher=0x7f02000a;
+        public static final int default_video_poster=0x7f020000;
+        public static final int errorpage=0x7f020001;
+        public static final int home_apps=0x7f020002;
+        public static final int home_callmsgsafe=0x7f020003;
+        public static final int home_netmanager=0x7f020004;
+        public static final int home_safe=0x7f020005;
+        public static final int home_settings=0x7f020006;
+        public static final int home_sysoptimize=0x7f020007;
+        public static final int home_taskmanager=0x7f020008;
+        public static final int home_tools=0x7f020009;
+        public static final int home_trojan=0x7f02000a;
+        public static final int ic_launcher=0x7f02000b;
+        public static final int icon=0x7f02000c;
     }
     public static final class id {
-        public static final int action_settings=0x7f080015;
-        public static final int btn=0x7f08000d;
-        public static final int btn_calljs=0x7f080006;
-        public static final int btn_copyDB=0x7f080010;
-        public static final int btn_newpage=0x7f080007;
-        public static final int btn_post=0x7f08000f;
-        public static final int btn_queryDB=0x7f080011;
-        public static final int et_input=0x7f080012;
-        public static final int gv_pushnotify=0x7f080000;
-        public static final int iv_function=0x7f080008;
-        public static final int ll_base_error=0x7f080005;
-        public static final int ll_base_loading=0x7f080003;
-        public static final int lv_showappname=0x7f08000b;
-        public static final int lv_showpackage=0x7f08000a;
-        public static final int pb_emulator=0x7f080014;
-        public static final int progressBar1=0x7f080004;
-        public static final int tdd=0x7f08000e;
-        public static final int tv_function=0x7f080009;
-        public static final int tv_result=0x7f080013;
-        public static final int tv_showpackage_total=0x7f08000c;
-        public static final int tv_title=0x7f080001;
-        public static final int wv_baseactivity=0x7f080002;
+        public static final int action_settings=0x7f09001c;
+        public static final int btn=0x7f09000d;
+        public static final int btn_calljs=0x7f090009;
+        public static final int btn_copyDB=0x7f090016;
+        public static final int btn_loginQQ=0x7f090011;
+        public static final int btn_logoutQQ=0x7f090012;
+        public static final int btn_newpage=0x7f09000a;
+        public static final int btn_post=0x7f090015;
+        public static final int btn_queryDB=0x7f090017;
+        public static final int btn_showQQInfo=0x7f090013;
+        public static final int error_console=0x7f090007;
+        public static final int et_input=0x7f090018;
+        public static final int fullscreen_custom_content=0x7f090006;
+        public static final int gv_pushnotify=0x7f090000;
+        public static final int iv_function=0x7f09000b;
+        public static final int ll_base_error=0x7f090005;
+        public static final int ll_base_loading=0x7f090003;
+        public static final int lv_showappname=0x7f09000f;
+        public static final int lv_showpackage=0x7f09000e;
+        public static final int main_content=0x7f090008;
+        public static final int pb_emulator=0x7f09001a;
+        public static final int progressBar1=0x7f090004;
+        public static final int progress_indicator=0x7f09001b;
+        public static final int tdd=0x7f090014;
+        public static final int tv_function=0x7f09000c;
+        public static final int tv_result=0x7f090019;
+        public static final int tv_showpackage_total=0x7f090010;
+        public static final int tv_title=0x7f090001;
+        public static final int wv_baseactivity=0x7f090002;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int base_activity=0x7f030001;
-        public static final int democall_activity=0x7f030002;
-        public static final int gv_item=0x7f030003;
-        public static final int showpackage_activity=0x7f030004;
-        public static final int testcustomview_activity=0x7f030005;
-        public static final int testrequest_activity=0x7f030006;
+        public static final int activity_return=0x7f030001;
+        public static final int base_activity=0x7f030002;
+        public static final int custom_screen=0x7f030003;
+        public static final int democall_activity=0x7f030004;
+        public static final int gv_item=0x7f030005;
+        public static final int main=0x7f030006;
+        public static final int showpackage_activity=0x7f030007;
+        public static final int testcustomview_activity=0x7f030008;
+        public static final int testrequest_activity=0x7f030009;
+        public static final int video_loading_progress=0x7f03000a;
     }
     public static final class menu {
-        public static final int main=0x7f070000;
+        public static final int main=0x7f080000;
     }
     public static final class string {
-        public static final int action_settings=0x7f050001;
-        public static final int app_name=0x7f050000;
-        public static final int hello_world=0x7f050002;
+        public static final int action_settings=0x7f050003;
+        public static final int app_name=0x7f050001;
+        public static final int hello=0x7f050000;
+        public static final int hello_world=0x7f050004;
+        public static final int loading_video=0x7f050002;
+        public static final int title_activity_return=0x7f050005;
     }
     public static final class style {
         /** 
@@ -96,10 +123,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f070001;
     }
 }
